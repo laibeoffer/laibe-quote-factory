@@ -1,0 +1,69 @@
+[
+  {
+    "override_id": "override-pr-001-keep-reference",
+    "id": "override-pr-001-keep-reference",
+    "price_range_id": "pr-001-BATHROOM_WATERPROOF_H240-ROOM-labor_and_material-Taipei-TWD",
+    "previous_decision": "needs_more_observations",
+    "requested_decision": "keep_as_historical_reference",
+    "reviewer_id": "senior_reviewer_simulated",
+    "override_reason_codes": [
+      "keep_for_reference_only",
+      "insufficient_data_but_useful_reference"
+    ],
+    "reviewer_note": "Keep this single-observation waterproofing range only as historical reference; do not treat it as cloud-approved candidate pricing.",
+    "override_risk_acknowledged": false,
+    "requested_at": "2026-05-24T00:00:00Z",
+    "is_simulated_review": true,
+    "schema_version": "qf5_3_override_request_v1"
+  },
+  {
+    "override_id": "override-pr-004-unit-keep-reference",
+    "id": "override-pr-004-unit-keep-reference",
+    "price_range_id": "pr-004-MASONRY_WALL_BASE_PREP-M2-labor_and_material-Taipei-TWD",
+    "previous_decision": "needs_unit_review",
+    "requested_decision": "keep_as_historical_reference",
+    "reviewer_id": "senior_reviewer_simulated",
+    "override_reason_codes": [
+      "unit_confirmed_by_reviewer",
+      "keep_for_reference_only"
+    ],
+    "reviewer_note": "Unit conflict is noted; keep this M2 grouping as historical reference only while PING/M2 grouping remains under review.",
+    "override_risk_acknowledged": false,
+    "requested_at": "2026-05-24T00:01:00Z",
+    "is_simulated_review": true,
+    "schema_version": "qf5_3_override_request_v1"
+  },
+  {
+    "override_id": "override-pr-002-approve-cloud",
+    "id": "override-pr-002-approve-cloud",
+    "price_range_id": "pr-002-ELECTRIC_LIGHTING_INSTALL-LAMP-labor_only-Taipei-TWD",
+    "previous_decision": "keep_as_historical_reference",
+    "requested_decision": "approved_for_cloud",
+    "reviewer_id": "senior_reviewer_simulated",
+    "override_reason_codes": [
+      "known_standard_item",
+      "scope_confirmed_by_reviewer"
+    ],
+    "reviewer_note": "Simulated override to allow this candidate statistic to be staged for cloud review only. This is not formal price approval.",
+    "override_risk_acknowledged": true,
+    "requested_at": "2026-05-24T00:02:00Z",
+    "is_simulated_review": true,
+    "schema_version": "qf5_3_override_request_v1"
+  },
+  {
+    "override_id": "override-illegal-rejected-to-cloud",
+    "id": "override-illegal-rejected-to-cloud",
+    "price_range_id": "pr-003-ELECTRIC_SOCKET_EXTENSION-OUTLET-labor_only-Taipei-TWD",
+    "previous_decision": "rejected",
+    "requested_decision": "approved_for_cloud",
+    "reviewer_id": "junior_reviewer_simulated",
+    "override_reason_codes": [
+      "scope_confirmed_by_reviewer"
+    ],
+    "reviewer_note": "Illegal test case: rejected to approved_for_cloud without senior_manual_override and risk acknowledgement. Validator must block this request.",
+    "override_risk_acknowledged": false,
+    "requested_at": "2026-05-24T00:03:00Z",
+    "is_simulated_review": true,
+    "schema_version": "qf5_3_override_request_v1"
+  }
+]

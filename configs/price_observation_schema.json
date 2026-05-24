@@ -1,0 +1,45 @@
+{
+  "price_observation": {
+    "observation_id": { "type": "string", "required": true },
+    "source_file_id": { "type": "string", "required": true },
+    "source_file_name": { "type": "string", "required": true },
+    "quote_date": { "type": "string", "required": true },
+    "observed_year": { "type": "integer", "required": true },
+    "region_raw": { "type": "string", "required": false },
+    "region_normalized": { "type": "string", "required": true },
+    "trade_category": { "type": "string", "required": true },
+    "canonical_item_code": { "type": "string", "required": false },
+    "canonical_item_name": { "type": "string", "required": false },
+    "item_name_raw": { "type": "string", "required": true },
+    "item_name_normalized": { "type": "string", "required": false },
+    "brand": { "type": "string", "required": false },
+    "model": { "type": "string", "required": false },
+    "spec": { "type": "string", "required": false },
+    "method_tags": { "type": "array", "required": false, "items_type": "string" },
+    "spec_tags": { "type": "array", "required": false, "items_type": "string" },
+    "work_material_scope": {
+      "type": "enum",
+      "values": [
+        "labor_only",
+        "material_only",
+        "labor_and_material",
+        "equipment_allowance",
+        "unknown"
+      ],
+      "required": true
+    },
+    "unit_raw": { "type": "string", "required": true },
+    "unit_normalized": { "type": "string", "required": true },
+    "conversion_factor": { "type": "number", "required": true },
+    "observed_unit_price": { "type": "number", "required": false },
+    "normalized_unit_price": { "type": "number", "required": false },
+    "amount_observed": { "type": "number", "required": false },
+    "currency": { "type": "string", "required": true },
+    "confidence": { "type": "number", "required": false },
+    "warnings": { "type": "array", "required": false, "items_type": "string" },
+    "requires_human_review": { "type": "boolean", "required": false }
+  },
+  "notes": {
+    "observed_unit_price_and_normalized_unit_price_are_not_formal_price": true
+  }
+}

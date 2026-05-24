@@ -1,0 +1,27 @@
+{
+  "time_weights": {
+    "recent_0_12_months_weight": 1.0,
+    "months_12_24_weight": 0.7,
+    "months_24_36_weight": 0.5
+  },
+  "price_range_fields": [
+    "price_min",
+    "price_max",
+    "price_median",
+    "price_weighted_avg",
+    "display_unit_price",
+    "observation_count",
+    "low_confidence_count",
+    "excluded_outlier_count"
+  ],
+  "display_unit_price_rounding": {
+    "rounding": "nearest_integer",
+    "formula_options": ["price_median", "price_weighted_avg"],
+    "disallow_single_observation": true
+  },
+  "outlier": {
+    "mark_high_tag": "price_outlier_high",
+    "mark_low_tag": "price_outlier_low",
+    "exclude_requires_review": true
+  }
+}

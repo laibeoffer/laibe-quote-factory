@@ -1,0 +1,351 @@
+{
+  "tables": [
+    {
+      "table_name": "quote_source_files",
+      "purpose": "儲存原始上傳檔案與來源屬性",
+      "primary_key": "id",
+      "foreign_keys": [],
+      "required_fields": [
+        "id",
+        "source_file_name",
+        "source_type",
+        "source_date",
+        "source_reliability",
+        "region_normalized",
+        "currency",
+        "created_at",
+        "updated_at",
+        "upload_stage",
+        "schema_version"
+      ],
+      "optional_fields": [
+        "source_note",
+        "raw_items_count",
+        "blocked_count",
+        "review_count"
+      ],
+      "json_source": "exports_to_raw_warehouse/sample_raw_catalog_source.json",
+      "upload_stage": "approved_for_cloud"
+    },
+    {
+      "table_name": "raw_quote_rows",
+      "purpose": "保存欄位級報價原始列（候選級）",
+      "primary_key": "id",
+      "foreign_keys": ["source_file_id -> quote_source_files.id"],
+      "required_fields": [
+        "id",
+        "source_file_id",
+        "source_row_id",
+        "row_id",
+        "row_index",
+        "source_file_name",
+        "source_type",
+        "row_role",
+        "created_at",
+        "updated_at",
+        "upload_stage",
+        "schema_version",
+        "trade_category_normalized"
+      ],
+      "optional_fields": [
+        "item_name_raw",
+        "item_name_normalized",
+        "unit_raw",
+        "unit_normalized",
+        "quantity_normalized",
+        "unit_price_observed",
+        "amount_observed",
+        "currency_normalized",
+        "note_raw",
+        "note_normalized",
+        "parse_warnings",
+        "requires_human_review",
+        "blocked",
+        "blocked_reason",
+        "confidence",
+        "metadata"
+      ],
+      "json_source": "samples/sample_normalized_quote_rows.json",
+      "upload_stage": "review_required"
+    },
+    {
+      "table_name": "raw_catalog_sources",
+      "purpose": "輸出到 Raw Candidate Warehouse 的來源容器",
+      "primary_key": "id",
+      "foreign_keys": ["source_file_id"],
+      "required_fields": [
+        "id",
+        "source_type",
+        "source_name",
+        "source_date",
+        "source_reliability",
+        "currency",
+        "source_file_id",
+        "created_at",
+        "updated_at",
+        "upload_stage",
+        "schema_version"
+      ],
+      "optional_fields": [
+        "source_note",
+        "region",
+        "raw_items"
+      ],
+      "json_source": "exports_to_raw_warehouse/sample_raw_catalog_source.json",
+      "upload_stage": "staging_candidate"
+    },
+    {
+      "table_name": "raw_catalog_items",
+      "purpose": "Raw Catalog 候選明細列（未正式定價）",
+      "primary_key": "id",
+      "foreign_keys": ["source_file_id -> quote_source_files.id"],
+      "required_fields": [
+        "id",
+        "source_id",
+        "source_file_id",
+        "row_index",
+        "raw_category",
+        "raw_name",
+        "raw_unit",
+        "raw_quantity",
+        "raw_currency",
+        "raw_unit_price",
+        "raw_amount",
+        "created_at",
+        "updated_at",
+        "source_row_id",
+        "upload_stage",
+        "schema_version"
+      ],
+      "optional_fields": [
+        "raw_brand",
+        "raw_model",
+        "raw_spec",
+        "effective_date",
+        "region",
+        "vendor_name",
+        "raw_text",
+        "metadata",
+        "requires_human_review",
+        "parse_warnings"
+      ],
+      "json_source": "exports_to_raw_warehouse/sample_raw_catalog_source.json",
+      "upload_stage": "staging_candidate"
+    },
+    {
+      "table_name": "price_observations",
+      "purpose": "未正式定價的 Price Observation 候選池",
+      "primary_key": "observation_id",
+      "foreign_keys": ["source_file_id -> quote_source_files.id", "source_row_id -> raw_quote_rows.id"],
+      "required_fields": [
+        "observation_id",
+        "source_file_id",
+        "source_row_id",
+        "quote_date",
+        "observed_year",
+        "region_normalized",
+        "trade_category",
+        "canonical_item_code",
+        "item_name_raw",
+        "unit_raw",
+        "unit_normalized",
+        "conversion_factor",
+        "observed_unit_price",
+        "normalized_unit_price",
+        "currency",
+        "work_material_scope",
+        "created_at",
+        "updated_at",
+        "upload_stage",
+        "schema_version"
+      ],
+      "optional_fields": [
+        "canonical_item_name",
+        "item_name_normalized",
+        "brand",
+        "model",
+        "spec",
+        "method_tags",
+        "spec_tags",
+        "amount_observed",
+        "confidence",
+        "warnings",
+        "requires_human_review"
+      ],
+      "json_source": "future_generated_price_observations.json",
+      "upload_stage": "local_only"
+    },
+    {
+      "table_name": "price_ranges",
+      "purpose": "候選價格區間結果（中位數/加權均值等）",
+      "primary_key": "id",
+      "foreign_keys": ["canonical_item_code", "region_normalized", "unit_normalized"],
+      "required_fields": [
+        "id",
+        "canonical_item_code",
+        "unit_normalized",
+        "region_normalized",
+        "trade_category",
+        "price_min",
+        "price_max",
+        "price_median",
+        "price_weighted_avg",
+        "display_unit_price",
+        "observation_count",
+        "created_at",
+        "updated_at",
+        "upload_stage",
+        "schema_version"
+      ],
+      "optional_fields": [
+        "low_confidence_count",
+        "excluded_outlier_count",
+        "source_file_ids",
+        "from_date",
+        "to_date",
+        "outlier_tags"
+      ],
+      "json_source": "future_generated_price_ranges.json",
+      "upload_stage": "local_only"
+    },
+    {
+      "table_name": "canonical_items",
+      "purpose": "Canonical item dictionary 的對照表",
+      "primary_key": "canonical_item_code",
+      "foreign_keys": [],
+      "required_fields": [
+        "canonical_item_code",
+        "canonical_item_name",
+        "trade_category",
+        "created_at",
+        "updated_at",
+        "upload_stage",
+        "schema_version"
+      ],
+      "optional_fields": [
+        "status",
+        "is_approved",
+        "aliases",
+        "positive_context_terms",
+        "negative_context_terms"
+      ],
+      "json_source": "configs/item_alias_dictionary.json",
+      "upload_stage": "local_only"
+    },
+    {
+      "table_name": "item_aliases",
+      "purpose": "Item Alias 規則明細（可選版）",
+      "primary_key": "id",
+      "foreign_keys": ["canonical_item_code -> canonical_items.canonical_item_code"],
+      "required_fields": [
+        "id",
+        "canonical_item_code",
+        "alias",
+        "created_at",
+        "updated_at",
+        "upload_stage",
+        "schema_version"
+      ],
+      "optional_fields": [
+        "priority",
+        "negative_context_terms",
+        "positive_context_terms",
+        "review_threshold"
+      ],
+      "json_source": "configs/item_alias_dictionary.json",
+      "upload_stage": "local_only"
+    },
+    {
+      "table_name": "unit_normalization_rules",
+      "purpose": "單位正規化規則集合",
+      "primary_key": "normalized_unit",
+      "foreign_keys": [],
+      "required_fields": [
+        "normalized_unit",
+        "created_at",
+        "updated_at",
+        "upload_stage",
+        "schema_version"
+      ],
+      "optional_fields": [
+        "aliases",
+        "conversion_factor",
+        "conversion_direction",
+        "notes"
+      ],
+      "json_source": "configs/unit_normalization_rules.json",
+      "upload_stage": "local_only"
+    },
+    {
+      "table_name": "work_material_rules",
+      "purpose": "工料分離規則（trade 與關鍵詞例外）",
+      "primary_key": "table_id",
+      "foreign_keys": [],
+      "required_fields": [
+        "table_id",
+        "default_region",
+        "created_at",
+        "updated_at",
+        "upload_stage",
+        "schema_version"
+      ],
+      "optional_fields": [
+        "trade_defaults",
+        "exceptions",
+        "fallback"
+      ],
+      "json_source": "configs/work_material_rules.json",
+      "upload_stage": "local_only"
+    },
+    {
+      "table_name": "quote_review_queue",
+           "purpose": "人工審核佇列",
+      "primary_key": "id",
+      "foreign_keys": ["source_file_id -> quote_source_files.id"],
+      "required_fields": [
+        "id",
+        "source_file_id",
+        "source_row_id",
+        "row_role",
+        "requires_human_review",
+        "upload_stage",
+        "created_at",
+        "updated_at",
+        "schema_version"
+      ],
+      "optional_fields": [
+        "review_reason_codes",
+        "assigned_to",
+        "assigned_at",
+        "review_status",
+        "notes"
+      ],
+      "json_source": "review_queue/sample_quote_row_review_queue.json",
+      "upload_stage": "review_required"
+    },
+    {
+      "table_name": "export_batches",
+      "purpose": "本機輸出批次與雲端轉換紀錄",
+      "primary_key": "id",
+      "foreign_keys": ["source_file_id -> quote_source_files.id"],
+      "required_fields": [
+        "id",
+        "source_file_id",
+        "batch_name",
+        "item_count",
+        "created_at",
+        "updated_at",
+        "upload_stage",
+        "schema_version"
+      ],
+      "optional_fields": [
+        "notes",
+        "status",
+        "error_count",
+        "warning_count"
+      ],
+      "json_source": "exports_to_raw_warehouse/sample_raw_catalog_source.json",
+      "upload_stage": "local_only"
+    }
+  ]
+}

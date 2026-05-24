@@ -1,0 +1,290 @@
+[
+  {
+    "id": "pr-001-BATHROOM_WATERPROOF_H240-ROOM-labor_and_material-Taipei-TWD",
+    "price_range_id": "pr-001-BATHROOM_WATERPROOF_H240-ROOM-labor_and_material-Taipei-TWD",
+    "canonical_item_code": "BATHROOM_WATERPROOF_H240",
+    "canonical_item_name": "浴室彈性防水 H240",
+    "unit_normalized": "ROOM",
+    "work_material_scope": "labor_and_material",
+    "region_normalized": "Taipei",
+    "currency": "TWD",
+    "group_key_summary": "BATHROOM_WATERPROOF_H240 | ROOM | labor_and_material | Taipei | TWD",
+    "display_null_reason_codes": [],
+    "included_observation_count": 1,
+    "excluded_observation_count": 0,
+    "excluded_observation_ids": [],
+    "requires_human_review": true,
+    "review_reason_codes": [
+      "insufficient_observation_count"
+    ],
+    "created_at": "2026-05-23T06:16:07Z",
+    "updated_at": "2026-05-23T06:16:07Z",
+    "schema_version": "qf3_v1",
+    "upload_stage": "review_required"
+  },
+  {
+    "id": "pr-002-ELECTRIC_LIGHTING_INSTALL-LAMP-labor_only-Taipei-TWD",
+    "price_range_id": "pr-002-ELECTRIC_LIGHTING_INSTALL-LAMP-labor_only-Taipei-TWD",
+    "canonical_item_code": "ELECTRIC_LIGHTING_INSTALL",
+    "canonical_item_name": "燈具出線及安裝",
+    "unit_normalized": "LAMP",
+    "work_material_scope": "labor_only",
+    "region_normalized": "Taipei",
+    "currency": "TWD",
+    "group_key_summary": "ELECTRIC_LIGHTING_INSTALL | LAMP | labor_only | Taipei | TWD",
+    "display_null_reason_codes": [
+      "all_observations_excluded",
+      "missing_price_data",
+      "no_included_observations",
+      "requires_human_review"
+    ],
+    "included_observation_count": 0,
+    "excluded_observation_count": 1,
+    "excluded_observation_ids": [
+      "raw-013-obs"
+    ],
+    "requires_human_review": true,
+    "review_reason_codes": [
+      "all_observations_excluded",
+      "has_excluded_observations",
+      "insufficient_observation_count",
+      "missing_price_data",
+      "no_included_observations",
+      "requires_human_review",
+      "source_observations_require_review"
+    ],
+    "created_at": "2026-05-23T06:16:07Z",
+    "updated_at": "2026-05-23T06:16:07Z",
+    "schema_version": "qf3_v1",
+    "upload_stage": "review_required"
+  },
+  {
+    "id": "pr-003-ELECTRIC_SOCKET_EXTENSION-OUTLET-labor_only-Taipei-TWD",
+    "price_range_id": "pr-003-ELECTRIC_SOCKET_EXTENSION-OUTLET-labor_only-Taipei-TWD",
+    "canonical_item_code": "ELECTRIC_SOCKET_EXTENSION",
+    "canonical_item_name": "插座出口延伸",
+    "unit_normalized": "OUTLET",
+    "work_material_scope": "labor_only",
+    "region_normalized": "Taipei",
+    "currency": "TWD",
+    "group_key_summary": "ELECTRIC_SOCKET_EXTENSION | OUTLET | labor_only | Taipei | TWD",
+    "display_null_reason_codes": [
+      "all_observations_excluded",
+      "missing_price_data",
+      "no_included_observations",
+      "requires_human_review"
+    ],
+    "included_observation_count": 0,
+    "excluded_observation_count": 1,
+    "excluded_observation_ids": [
+      "raw-012-obs"
+    ],
+    "requires_human_review": true,
+    "review_reason_codes": [
+      "all_observations_excluded",
+      "has_excluded_observations",
+      "insufficient_observation_count",
+      "missing_price_data",
+      "no_included_observations",
+      "requires_human_review",
+      "source_observations_require_review"
+    ],
+    "created_at": "2026-05-23T06:16:07Z",
+    "updated_at": "2026-05-23T06:16:07Z",
+    "schema_version": "qf3_v1",
+    "upload_stage": "review_required"
+  },
+  {
+    "id": "pr-004-MASONRY_WALL_BASE_PREP-M2-labor_and_material-Taipei-TWD",
+    "price_range_id": "pr-004-MASONRY_WALL_BASE_PREP-M2-labor_and_material-Taipei-TWD",
+    "canonical_item_code": "MASONRY_WALL_BASE_PREP",
+    "canonical_item_name": "泥作牆面粗底打底",
+    "unit_normalized": "M2",
+    "work_material_scope": "labor_and_material",
+    "region_normalized": "Taipei",
+    "currency": "TWD",
+    "group_key_summary": "MASONRY_WALL_BASE_PREP | M2 | labor_and_material | Taipei | TWD",
+    "display_null_reason_codes": [],
+    "included_observation_count": 2,
+    "excluded_observation_count": 1,
+    "excluded_observation_ids": [
+      "neg-003-obs"
+    ],
+    "requires_human_review": true,
+    "review_reason_codes": [
+      "cross_unit_review_required",
+      "has_excluded_observations",
+      "source_observations_require_review"
+    ],
+    "created_at": "2026-05-23T06:16:07Z",
+    "updated_at": "2026-05-23T06:16:07Z",
+    "schema_version": "qf3_v1",
+    "upload_stage": "review_required"
+  },
+  {
+    "id": "pr-005-MASONRY_WALL_BASE_PREP-PING-labor_and_material-Taipei-TWD",
+    "price_range_id": "pr-005-MASONRY_WALL_BASE_PREP-PING-labor_and_material-Taipei-TWD",
+    "canonical_item_code": "MASONRY_WALL_BASE_PREP",
+    "canonical_item_name": "泥作牆面粗底打底",
+    "unit_normalized": "PING",
+    "work_material_scope": "labor_and_material",
+    "region_normalized": "Taipei",
+    "currency": "TWD",
+    "group_key_summary": "MASONRY_WALL_BASE_PREP | PING | labor_and_material | Taipei | TWD",
+    "display_null_reason_codes": [],
+    "included_observation_count": 3,
+    "excluded_observation_count": 4,
+    "excluded_observation_ids": [
+      "edge-004-obs",
+      "neg-001-obs",
+      "neg-002-obs",
+      "neg-004-obs"
+    ],
+    "requires_human_review": true,
+    "review_reason_codes": [
+      "cross_unit_review_required",
+      "has_excluded_observations",
+      "outlier_observed",
+      "source_observations_require_review"
+    ],
+    "created_at": "2026-05-23T06:16:07Z",
+    "updated_at": "2026-05-23T06:16:07Z",
+    "schema_version": "qf3_v1",
+    "upload_stage": "review_required"
+  },
+  {
+    "id": "pr-006-TILE_FLOOR_INSTALL-PING-labor_and_material-Taipei-TWD",
+    "price_range_id": "pr-006-TILE_FLOOR_INSTALL-PING-labor_and_material-Taipei-TWD",
+    "canonical_item_code": "TILE_FLOOR_INSTALL",
+    "canonical_item_name": "地磚貼工",
+    "unit_normalized": "PING",
+    "work_material_scope": "labor_and_material",
+    "region_normalized": "Taipei",
+    "currency": "TWD",
+    "group_key_summary": "TILE_FLOOR_INSTALL | PING | labor_and_material | Taipei | TWD",
+    "display_null_reason_codes": [
+      "all_observations_excluded",
+      "missing_price_data",
+      "no_included_observations",
+      "requires_human_review"
+    ],
+    "included_observation_count": 0,
+    "excluded_observation_count": 1,
+    "excluded_observation_ids": [
+      "raw-009-obs"
+    ],
+    "requires_human_review": true,
+    "review_reason_codes": [
+      "all_observations_excluded",
+      "has_excluded_observations",
+      "insufficient_observation_count",
+      "missing_price_data",
+      "no_included_observations",
+      "requires_human_review",
+      "source_observations_require_review"
+    ],
+    "created_at": "2026-05-23T06:16:07Z",
+    "updated_at": "2026-05-23T06:16:07Z",
+    "schema_version": "qf3_v1",
+    "upload_stage": "review_required"
+  },
+  {
+    "id": "pr-007-TILE_WALL_INSTALL-PING-labor_and_material-Taipei-TWD",
+    "price_range_id": "pr-007-TILE_WALL_INSTALL-PING-labor_and_material-Taipei-TWD",
+    "canonical_item_code": "TILE_WALL_INSTALL",
+    "canonical_item_name": "壁磚貼工",
+    "unit_normalized": "PING",
+    "work_material_scope": "labor_and_material",
+    "region_normalized": "Taipei",
+    "currency": "TWD",
+    "group_key_summary": "TILE_WALL_INSTALL | PING | labor_and_material | Taipei | TWD",
+    "display_null_reason_codes": [
+      "all_observations_excluded",
+      "missing_price_data",
+      "no_included_observations",
+      "requires_human_review"
+    ],
+    "included_observation_count": 0,
+    "excluded_observation_count": 1,
+    "excluded_observation_ids": [
+      "raw-008-obs"
+    ],
+    "requires_human_review": true,
+    "review_reason_codes": [
+      "all_observations_excluded",
+      "has_excluded_observations",
+      "insufficient_observation_count",
+      "missing_price_data",
+      "no_included_observations",
+      "requires_human_review",
+      "source_observations_require_review"
+    ],
+    "created_at": "2026-05-23T06:16:07Z",
+    "updated_at": "2026-05-23T06:16:07Z",
+    "schema_version": "qf3_v1",
+    "upload_stage": "review_required"
+  },
+  {
+    "id": "pr-008-WOOD_CABINET_BODY-CHI-labor_and_material-Taipei-TWD",
+    "price_range_id": "pr-008-WOOD_CABINET_BODY-CHI-labor_and_material-Taipei-TWD",
+    "canonical_item_code": "WOOD_CABINET_BODY",
+    "canonical_item_name": "木作櫃體",
+    "unit_normalized": "CHI",
+    "work_material_scope": "labor_and_material",
+    "region_normalized": "Taipei",
+    "currency": "TWD",
+    "group_key_summary": "WOOD_CABINET_BODY | CHI | labor_and_material | Taipei | TWD",
+    "display_null_reason_codes": [],
+    "included_observation_count": 1,
+    "excluded_observation_count": 1,
+    "excluded_observation_ids": [
+      "raw-002-obs"
+    ],
+    "requires_human_review": true,
+    "review_reason_codes": [
+      "has_excluded_observations",
+      "insufficient_observation_count",
+      "source_observations_require_review"
+    ],
+    "created_at": "2026-05-23T06:16:07Z",
+    "updated_at": "2026-05-23T06:16:07Z",
+    "schema_version": "qf3_v1",
+    "upload_stage": "review_required"
+  },
+  {
+    "id": "pr-009-WOOD_CABINET_BODY-CM-labor_and_material-Taipei-TWD",
+    "price_range_id": "pr-009-WOOD_CABINET_BODY-CM-labor_and_material-Taipei-TWD",
+    "canonical_item_code": "WOOD_CABINET_BODY",
+    "canonical_item_name": "木作櫃體",
+    "unit_normalized": "CM",
+    "work_material_scope": "labor_and_material",
+    "region_normalized": "Taipei",
+    "currency": "TWD",
+    "group_key_summary": "WOOD_CABINET_BODY | CM | labor_and_material | Taipei | TWD",
+    "display_null_reason_codes": [
+      "all_observations_excluded",
+      "missing_price_data",
+      "no_included_observations",
+      "requires_human_review"
+    ],
+    "included_observation_count": 0,
+    "excluded_observation_count": 1,
+    "excluded_observation_ids": [
+      "raw-003-obs"
+    ],
+    "requires_human_review": true,
+    "review_reason_codes": [
+      "all_observations_excluded",
+      "has_excluded_observations",
+      "insufficient_observation_count",
+      "missing_price_data",
+      "no_included_observations",
+      "requires_human_review",
+      "source_observations_require_review"
+    ],
+    "created_at": "2026-05-23T06:16:07Z",
+    "updated_at": "2026-05-23T06:16:07Z",
+    "schema_version": "qf3_v1",
+    "upload_stage": "review_required"
+  }
+]

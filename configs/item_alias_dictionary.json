@@ -1,0 +1,74 @@
+{
+  "canonical_items": [
+    {
+      "canonical_item_code": "MASONRY_WALL_BASE_PREP",
+      "canonical_item_name": "泥作牆面粗底打底",
+      "trade_category": "泥作工程",
+      "aliases": [
+        "泥作粗底",
+        "泥作粗胚",
+        "牆面打底",
+        "粉粗底",
+        "水泥砂漿打底",
+        "壁面粗底"
+      ],
+      "positive_context_terms": ["浴室", "廚房", "濕區", "防水前", "貼磚前", "磁磚"],
+      "negative_context_terms": ["油漆", "批土", "木作", "矽酸鈣板"],
+      "review_if_confidence_below": 0.85
+    },
+    {
+      "canonical_item_code": "TILE_WALL_INSTALL",
+      "canonical_item_name": "壁磚貼工",
+      "trade_category": "泥作工程",
+      "aliases": ["壁磚貼工", "瓷磚牆面貼磚", "磁磚貼磚", "壁磚鋪貼"],
+      "positive_context_terms": ["浴室", "廚房", "濕區", "防水後", "貼磚"],
+      "negative_context_terms": ["木作", "油漆"],
+      "review_if_confidence_below": 0.8
+    },
+    {
+      "canonical_item_code": "TILE_FLOOR_INSTALL",
+      "canonical_item_name": "地磚貼工",
+      "trade_category": "泥作工程",
+      "aliases": ["地磚貼工", "地板貼磚", "地磚鋪貼", "地磚施工"],
+      "positive_context_terms": ["浴室", "陽台", "廚房", "防水後"],
+      "negative_context_terms": ["木作", "油漆"],
+      "review_if_confidence_below": 0.8
+    },
+    {
+      "canonical_item_code": "BATHROOM_WATERPROOF_H240",
+      "canonical_item_name": "浴室彈性防水 H240",
+      "trade_category": "泥作工程",
+      "aliases": ["浴室彈性水泥防水", "防水 H240", "彈性防水", "防水施工 H240", "浴室防水"],
+      "positive_context_terms": ["浴室", "濕區", "防水前", "防水"],
+      "negative_context_terms": ["木作", "油漆", "開關", "燈具"],
+      "review_if_confidence_below": 0.82
+    },
+    {
+      "canonical_item_code": "ELECTRIC_SOCKET_EXTENSION",
+      "canonical_item_name": "插座出口延伸",
+      "trade_category": "水電工程",
+      "aliases": ["插座出口延伸", "插座", "插頭", "插座外接", "插座施作"],
+      "positive_context_terms": ["弱電", "場佈", "插座"],
+      "negative_context_terms": ["木作", "泥作", "大理石"],
+      "review_if_confidence_below": 0.83
+    },
+    {
+      "canonical_item_code": "ELECTRIC_LIGHTING_INSTALL",
+      "canonical_item_name": "燈具出線及安裝",
+      "trade_category": "水電工程",
+      "aliases": ["燈具出線", "燈具安裝", "燈線", "照明施作", "燈具施工"],
+      "positive_context_terms": ["軌道燈", "崁燈", "吊燈", "照明"],
+      "negative_context_terms": ["木作", "泥作", "門"],
+      "review_if_confidence_below": 0.82
+    },
+    {
+      "canonical_item_code": "WOOD_CABINET_BODY",
+      "canonical_item_name": "木作櫃體",
+      "trade_category": "木作工程",
+      "aliases": ["衣櫃桶身", "櫃體", "木櫃", "中島吧檯", "櫃子本體"],
+      "positive_context_terms": ["衣櫃", "櫃體", "木作", "櫥櫃"],
+      "negative_context_terms": ["磁磚", "燈具", "開關"],
+      "review_if_confidence_below": 0.85
+    }
+  ]
+}

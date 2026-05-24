@@ -1,0 +1,81 @@
+{
+  "schema_version": "qf5_3_override_rules_v1",
+  "decision_enum": [
+    "approved_for_cloud",
+    "rejected",
+    "needs_more_observations",
+    "needs_unit_review",
+    "needs_scope_review",
+    "needs_alias_review",
+    "keep_as_historical_reference"
+  ],
+  "allowed_override_transitions": [
+    {
+      "from": "needs_more_observations",
+      "to": "keep_as_historical_reference"
+    },
+    {
+      "from": "needs_more_observations",
+      "to": "approved_for_cloud"
+    },
+    {
+      "from": "needs_unit_review",
+      "to": "keep_as_historical_reference"
+    },
+    {
+      "from": "needs_unit_review",
+      "to": "approved_for_cloud"
+    },
+    {
+      "from": "keep_as_historical_reference",
+      "to": "approved_for_cloud"
+    },
+    {
+      "from": "keep_as_historical_reference",
+      "to": "rejected"
+    },
+    {
+      "from": "rejected",
+      "to": "keep_as_historical_reference"
+    }
+  ],
+  "conditional_override_transitions": [
+    {
+      "from": "rejected",
+      "to": "approved_for_cloud",
+      "requires_reason_code": "senior_manual_override",
+      "requires_override_risk_acknowledged": true,
+      "note": "Rejected ranges may only move to approved_for_cloud with explicit senior override and risk acknowledgement. This still does not mean formal price approval."
+    }
+  ],
+  "override_reason_codes": [
+    "senior_manual_override",
+    "sufficient_domain_confidence",
+    "known_standard_item",
+    "unit_confirmed_by_reviewer",
+    "scope_confirmed_by_reviewer",
+    "keep_for_reference_only",
+    "insufficient_data_but_useful_reference",
+    "reject_due_to_bad_source",
+    "reject_due_to_wrong_alias",
+    "reject_due_to_unit_conflict",
+    "reject_due_to_scope_conflict"
+  ],
+  "safety": {
+    "approved_for_cloud_is_formal_price_approval": false,
+    "formal_price_generated": false,
+    "formal_pricing_rule_generated": false,
+    "formal_material_spec_generated": false,
+    "formal_labor_rule_generated": false,
+    "budget_estimate_line_generated": false,
+    "supabase_connected": false,
+    "migration_generated": false,
+    "forbidden_fields": [
+      "unit_price",
+      "formal_price",
+      "approved_price",
+      "pricing_rule_id",
+      "budget_estimate_line_id"
+    ]
+  }
+}

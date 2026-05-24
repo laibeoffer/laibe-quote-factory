@@ -1,0 +1,76 @@
+{
+  "schema_version": "qf5_2_v1",
+  "decision_enum": [
+    "approved_for_cloud",
+    "rejected",
+    "needs_more_observations",
+    "needs_unit_review",
+    "needs_scope_review",
+    "needs_alias_review",
+    "keep_as_historical_reference"
+  ],
+  "decision_meanings": {
+    "approved_for_cloud": "Candidate statistical PriceRange may move to cloud staging for Raw Candidate Warehouse / Pricing Review. This is not formal price approval.",
+    "rejected": "Current PriceRange is not used, while source PriceObservation records remain preserved.",
+    "needs_more_observations": "Included observation count is too low for candidate statistical use.",
+    "needs_unit_review": "Unit grouping or unit conversion needs human confirmation.",
+    "needs_scope_review": "Work/material scope needs human confirmation.",
+    "needs_alias_review": "Canonical item identity needs human confirmation.",
+    "keep_as_historical_reference": "Keep record as evidence only; do not move into candidate range set."
+  },
+  "suggested_decision_rules": [
+    {
+      "condition": "forbidden_field_hit = true",
+      "suggested_decision": "rejected",
+      "reason_code": "forbidden_field_hit"
+    },
+    {
+      "condition": "invalid_price_order = true",
+      "suggested_decision": "rejected",
+      "reason_code": "invalid_price_order"
+    },
+    {
+      "condition": "cross_unit_review_required in review_reason_codes or warnings",
+      "suggested_decision": "needs_unit_review",
+      "reason_code": "cross_unit_review_required"
+    },
+    {
+      "condition": "work_material_scope = unknown",
+      "suggested_decision": "needs_scope_review",
+      "reason_code": "work_material_scope_unknown"
+    },
+    {
+      "condition": "canonical_item_code = null",
+      "suggested_decision": "needs_alias_review",
+      "reason_code": "canonical_item_missing"
+    },
+    {
+      "condition": "included_observation_count < 2",
+      "suggested_decision": "needs_more_observations",
+      "reason_code": "insufficient_observation_count"
+    },
+    {
+      "condition": "display_unit_price = null and all observations are excluded",
+      "suggested_decision": "keep_as_historical_reference",
+      "reason_code": "all_observations_excluded"
+    },
+    {
+      "condition": "display_unit_price = null",
+      "suggested_decision": "needs_more_observations",
+      "reason_code": "missing_price_data"
+    }
+  ],
+  "safety": {
+    "approved_for_cloud_is_formal_price_approval": false,
+    "formal_price_generated": false,
+    "formal_pricing_rule_generated": false,
+    "budget_estimate_line_generated": false,
+    "forbidden_fields": [
+      "unit_price",
+      "formal_price",
+      "approved_price",
+      "pricing_rule_id",
+      "budget_estimate_line_id"
+    ]
+  }
+}

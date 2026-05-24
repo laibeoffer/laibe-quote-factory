@@ -1,0 +1,225 @@
+[
+  {
+    "decision_id": "decision-pr-001-BATHROOM_WATERPROOF_H240-ROOM-labor_and_material-Taipei-TWD",
+    "id": "decision-pr-001-BATHROOM_WATERPROOF_H240-ROOM-labor_and_material-Taipei-TWD",
+    "price_range_id": "pr-001-BATHROOM_WATERPROOF_H240-ROOM-labor_and_material-Taipei-TWD",
+    "reviewer_id": "manual_reviewer_placeholder",
+    "decision": "needs_more_observations",
+    "suggested_decision": "needs_more_observations",
+    "decision_reason_codes": [
+      "insufficient_observation_count"
+    ],
+    "reviewer_note": "Simulated sample review for QF5.2 contract validation only.",
+    "decided_at": "2026-05-23T06:30:06Z",
+    "source_observation_ids": [
+      "raw-007-obs"
+    ],
+    "excluded_observation_ids": [],
+    "upload_stage": "review_required",
+    "schema_version": "qf5_2_v1",
+    "is_simulated_review": true
+  },
+  {
+    "decision_id": "decision-pr-002-ELECTRIC_LIGHTING_INSTALL-LAMP-labor_only-Taipei-TWD",
+    "id": "decision-pr-002-ELECTRIC_LIGHTING_INSTALL-LAMP-labor_only-Taipei-TWD",
+    "price_range_id": "pr-002-ELECTRIC_LIGHTING_INSTALL-LAMP-labor_only-Taipei-TWD",
+    "reviewer_id": "manual_reviewer_placeholder",
+    "decision": "keep_as_historical_reference",
+    "suggested_decision": "keep_as_historical_reference",
+    "decision_reason_codes": [
+      "all_observations_excluded",
+      "missing_price_data",
+      "no_included_observations",
+      "requires_human_review"
+    ],
+    "reviewer_note": "Simulated sample review for QF5.2 contract validation only.",
+    "decided_at": "2026-05-23T06:30:06Z",
+    "source_observation_ids": [
+      "raw-013-obs"
+    ],
+    "excluded_observation_ids": [
+      "raw-013-obs"
+    ],
+    "upload_stage": "review_required",
+    "schema_version": "qf5_2_v1",
+    "is_simulated_review": true
+  },
+  {
+    "decision_id": "decision-pr-003-ELECTRIC_SOCKET_EXTENSION-OUTLET-labor_only-Taipei-TWD",
+    "id": "decision-pr-003-ELECTRIC_SOCKET_EXTENSION-OUTLET-labor_only-Taipei-TWD",
+    "price_range_id": "pr-003-ELECTRIC_SOCKET_EXTENSION-OUTLET-labor_only-Taipei-TWD",
+    "reviewer_id": "manual_reviewer_placeholder",
+    "decision": "keep_as_historical_reference",
+    "suggested_decision": "keep_as_historical_reference",
+    "decision_reason_codes": [
+      "all_observations_excluded",
+      "missing_price_data",
+      "no_included_observations",
+      "requires_human_review"
+    ],
+    "reviewer_note": "Simulated sample review for QF5.2 contract validation only.",
+    "decided_at": "2026-05-23T06:30:06Z",
+    "source_observation_ids": [
+      "raw-012-obs"
+    ],
+    "excluded_observation_ids": [
+      "raw-012-obs"
+    ],
+    "upload_stage": "review_required",
+    "schema_version": "qf5_2_v1",
+    "is_simulated_review": true
+  },
+  {
+    "decision_id": "decision-pr-004-MASONRY_WALL_BASE_PREP-M2-labor_and_material-Taipei-TWD",
+    "id": "decision-pr-004-MASONRY_WALL_BASE_PREP-M2-labor_and_material-Taipei-TWD",
+    "price_range_id": "pr-004-MASONRY_WALL_BASE_PREP-M2-labor_and_material-Taipei-TWD",
+    "reviewer_id": "manual_reviewer_placeholder",
+    "decision": "needs_unit_review",
+    "suggested_decision": "needs_unit_review",
+    "decision_reason_codes": [
+      "cross_unit_review_required"
+    ],
+    "reviewer_note": "Simulated sample review for QF5.2 contract validation only.",
+    "decided_at": "2026-05-23T06:30:06Z",
+    "source_observation_ids": [
+      "edge-003-obs",
+      "neg-003-obs",
+      "neg-008-obs"
+    ],
+    "excluded_observation_ids": [
+      "neg-003-obs"
+    ],
+    "upload_stage": "review_required",
+    "schema_version": "qf5_2_v1",
+    "is_simulated_review": true
+  },
+  {
+    "decision_id": "decision-pr-005-MASONRY_WALL_BASE_PREP-PING-labor_and_material-Taipei-TWD",
+    "id": "decision-pr-005-MASONRY_WALL_BASE_PREP-PING-labor_and_material-Taipei-TWD",
+    "price_range_id": "pr-005-MASONRY_WALL_BASE_PREP-PING-labor_and_material-Taipei-TWD",
+    "reviewer_id": "manual_reviewer_placeholder",
+    "decision": "needs_unit_review",
+    "suggested_decision": "needs_unit_review",
+    "decision_reason_codes": [
+      "cross_unit_review_required"
+    ],
+    "reviewer_note": "Simulated sample review for QF5.2 contract validation only.",
+    "decided_at": "2026-05-23T06:30:06Z",
+    "source_observation_ids": [
+      "edge-001-obs",
+      "edge-002-obs",
+      "edge-004-obs",
+      "neg-001-obs",
+      "neg-002-obs",
+      "neg-004-obs",
+      "neg-005-obs"
+    ],
+    "excluded_observation_ids": [
+      "edge-004-obs",
+      "neg-001-obs",
+      "neg-002-obs",
+      "neg-004-obs"
+    ],
+    "upload_stage": "review_required",
+    "schema_version": "qf5_2_v1",
+    "is_simulated_review": true
+  },
+  {
+    "decision_id": "decision-pr-006-TILE_FLOOR_INSTALL-PING-labor_and_material-Taipei-TWD",
+    "id": "decision-pr-006-TILE_FLOOR_INSTALL-PING-labor_and_material-Taipei-TWD",
+    "price_range_id": "pr-006-TILE_FLOOR_INSTALL-PING-labor_and_material-Taipei-TWD",
+    "reviewer_id": "manual_reviewer_placeholder",
+    "decision": "keep_as_historical_reference",
+    "suggested_decision": "keep_as_historical_reference",
+    "decision_reason_codes": [
+      "all_observations_excluded",
+      "missing_price_data",
+      "no_included_observations",
+      "requires_human_review"
+    ],
+    "reviewer_note": "Simulated sample review for QF5.2 contract validation only.",
+    "decided_at": "2026-05-23T06:30:06Z",
+    "source_observation_ids": [
+      "raw-009-obs"
+    ],
+    "excluded_observation_ids": [
+      "raw-009-obs"
+    ],
+    "upload_stage": "review_required",
+    "schema_version": "qf5_2_v1",
+    "is_simulated_review": true
+  },
+  {
+    "decision_id": "decision-pr-007-TILE_WALL_INSTALL-PING-labor_and_material-Taipei-TWD",
+    "id": "decision-pr-007-TILE_WALL_INSTALL-PING-labor_and_material-Taipei-TWD",
+    "price_range_id": "pr-007-TILE_WALL_INSTALL-PING-labor_and_material-Taipei-TWD",
+    "reviewer_id": "manual_reviewer_placeholder",
+    "decision": "keep_as_historical_reference",
+    "suggested_decision": "keep_as_historical_reference",
+    "decision_reason_codes": [
+      "all_observations_excluded",
+      "missing_price_data",
+      "no_included_observations",
+      "requires_human_review"
+    ],
+    "reviewer_note": "Simulated sample review for QF5.2 contract validation only.",
+    "decided_at": "2026-05-23T06:30:06Z",
+    "source_observation_ids": [
+      "raw-008-obs"
+    ],
+    "excluded_observation_ids": [
+      "raw-008-obs"
+    ],
+    "upload_stage": "review_required",
+    "schema_version": "qf5_2_v1",
+    "is_simulated_review": true
+  },
+  {
+    "decision_id": "decision-pr-008-WOOD_CABINET_BODY-CHI-labor_and_material-Taipei-TWD",
+    "id": "decision-pr-008-WOOD_CABINET_BODY-CHI-labor_and_material-Taipei-TWD",
+    "price_range_id": "pr-008-WOOD_CABINET_BODY-CHI-labor_and_material-Taipei-TWD",
+    "reviewer_id": "manual_reviewer_placeholder",
+    "decision": "needs_more_observations",
+    "suggested_decision": "needs_more_observations",
+    "decision_reason_codes": [
+      "insufficient_observation_count"
+    ],
+    "reviewer_note": "Simulated sample review for QF5.2 contract validation only.",
+    "decided_at": "2026-05-23T06:30:06Z",
+    "source_observation_ids": [
+      "raw-002-obs",
+      "raw-004-obs"
+    ],
+    "excluded_observation_ids": [
+      "raw-002-obs"
+    ],
+    "upload_stage": "review_required",
+    "schema_version": "qf5_2_v1",
+    "is_simulated_review": true
+  },
+  {
+    "decision_id": "decision-pr-009-WOOD_CABINET_BODY-CM-labor_and_material-Taipei-TWD",
+    "id": "decision-pr-009-WOOD_CABINET_BODY-CM-labor_and_material-Taipei-TWD",
+    "price_range_id": "pr-009-WOOD_CABINET_BODY-CM-labor_and_material-Taipei-TWD",
+    "reviewer_id": "manual_reviewer_placeholder",
+    "decision": "keep_as_historical_reference",
+    "suggested_decision": "keep_as_historical_reference",
+    "decision_reason_codes": [
+      "all_observations_excluded",
+      "missing_price_data",
+      "no_included_observations",
+      "requires_human_review"
+    ],
+    "reviewer_note": "Simulated sample review for QF5.2 contract validation only.",
+    "decided_at": "2026-05-23T06:30:06Z",
+    "source_observation_ids": [
+      "raw-003-obs"
+    ],
+    "excluded_observation_ids": [
+      "raw-003-obs"
+    ],
+    "upload_stage": "review_required",
+    "schema_version": "qf5_2_v1",
+    "is_simulated_review": true
+  }
+]

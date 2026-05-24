@@ -1,0 +1,92 @@
+{
+  "default_region": "Taipei",
+  "trade_defaults": [
+    { "trade_category": "泥作工程", "work_material_scope": "labor_and_material" },
+    { "trade_category": "水電工程", "work_material_scope": "labor_only" },
+    { "trade_category": "木作工程", "work_material_scope": "labor_and_material" },
+    { "trade_category": "廚具工程", "work_material_scope": "labor_and_material" }
+  ],
+  "exceptions": {
+    "泥作": [
+      {
+        "keyword": "磁磚鋪貼",
+        "work_material_scope": "labor_only",
+        "notes": "泥作例外，通常不含材料"
+      },
+      {
+        "keyword": "壁磚貼工",
+        "work_material_scope": "labor_only",
+        "notes": "通常不含磁磚"
+      },
+      {
+        "keyword": "地磚貼工",
+        "work_material_scope": "labor_only",
+        "notes": "通常不含磁磚"
+      },
+      {
+        "keyword": "大理石門檻",
+        "work_material_scope": "labor_and_material",
+        "notes": "依描述可保留工料分離或連工帶料"
+      },
+      {
+        "keyword": "人造石門檻",
+        "work_material_scope": "labor_and_material",
+        "notes": "高價件可 review，否則工料分離"
+      },
+      {
+        "keyword": "浴缸安裝",
+        "work_material_scope": "labor_only",
+        "notes": "通常工法分拆"
+      }
+    ],
+    "水電": [
+      {
+        "keyword": "插座面板",
+        "work_material_scope": "material_only_or_review",
+        "notes": "可能為獨立採購，需人工確認"
+      },
+      {
+        "keyword": "開關面板",
+        "work_material_scope": "material_only_or_review",
+        "notes": "可能為獨立採購，需人工確認"
+      },
+      {
+        "keyword": "弱電面板",
+        "work_material_scope": "material_only_or_review",
+        "notes": "可能為獨立採購，需人工確認"
+      }
+    ],
+    "木工": [
+      {
+        "keyword": "高價五金",
+        "work_material_scope": "equipment_allowance",
+        "notes": "高價五金不混入一般工項均價"
+      }
+    ],
+    "廚具": [
+      {
+        "keyword": "櫃體",
+        "work_material_scope": "labor_and_material",
+        "notes": "櫃體為主體工料"
+      },
+      {
+        "keyword": "人造石",
+        "work_material_scope": "labor_and_material",
+        "notes": "按人造石櫃體連工帶料處理"
+      },
+      {
+        "keyword": "機器",
+        "work_material_scope": "equipment_allowance",
+        "notes": "機器價格獨立估算"
+      },
+      {
+        "keyword": "高價五金",
+        "work_material_scope": "equipment_allowance",
+        "notes": "高價件走設備/配件預留"
+      }
+    ]
+  },
+  "fallback": {
+    "unknown": "requires_human_review"
+  }
+}

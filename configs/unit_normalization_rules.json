@@ -1,0 +1,76 @@
+{
+  "unit_rules": [
+    {
+      "normalized_unit": "M2",
+      "aliases": ["M2", "㎡", "m2", "平方公尺"],
+      "conversion_factor": 1.0,
+      "conversion_direction": "to_internal"
+    },
+    {
+      "normalized_unit": "PING",
+      "aliases": ["坪", "坪數", "Ping"],
+      "conversion_factor": 3.305785,
+      "conversion_direction": "PING_TO_M2"
+    },
+    {
+      "normalized_unit": "CM",
+      "aliases": ["CM", "Cm", "公分", "釐米"],
+      "conversion_factor": 0.01,
+      "conversion_direction": "CM_TO_M"
+    },
+    {
+      "normalized_unit": "M",
+      "aliases": ["M", "m", "公尺", "米"],
+      "conversion_factor": 100,
+      "conversion_direction": "M_TO_CM"
+    },
+    {
+      "normalized_unit": "CHI",
+      "aliases": ["尺", "中式"],
+      "conversion_factor": 0.333333,
+      "conversion_direction": "CHI_TO_M"
+    },
+    {
+      "normalized_unit": "TAI_CHI",
+      "aliases": ["才"],
+      "conversion_factor": 3.03,
+      "conversion_direction": "TAI_CHI_TO_M2"
+    },
+    {
+      "normalized_unit": "OUTLET",
+      "aliases": ["口", "插座口"],
+      "conversion_factor": 1,
+      "conversion_direction": "count_unit"
+    },
+    {
+      "normalized_unit": "LAMP",
+      "aliases": ["盞"],
+      "conversion_factor": 1,
+      "conversion_direction": "count_unit"
+    },
+    {
+      "normalized_unit": "SET",
+      "aliases": ["組", "組數"],
+      "conversion_factor": 1,
+      "conversion_direction": "count_unit"
+    },
+    {
+      "normalized_unit": "PIECE",
+      "aliases": ["式", "台", "件", "樁", "片"],
+      "conversion_factor": 1,
+      "conversion_direction": "count_unit"
+    },
+    {
+      "normalized_unit": "ROOM",
+      "aliases": ["間"],
+      "conversion_factor": 1,
+      "conversion_direction": "count_unit"
+    }
+  ],
+  "fallback": {
+    "conversion_factor": 1,
+    "normalized_unit": "UNKNOWN",
+    "requires_human_review": true,
+    "notes": "無法辨識單位時進入 review_queue"
+  }
+}

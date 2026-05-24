@@ -1,0 +1,38 @@
+# Secrets / credentials
+.env
+.env.*
+*.env
+*token*
+*secret*
+*api_key*
+*credentials*
+*auth*
+*.pem
+*.key
+*.p12
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# Local / OS
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+*.tmp
+*.bak
+
+# Archives / bulky exports
+*.zip
+*.rar
+*.7z
+
+# Local runtime outputs
+.cache/
+tmp/
+temp/

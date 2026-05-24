@@ -1,0 +1,73 @@
+{
+  "source_fields": {
+    "id": "source_file_id",
+    "source_type": "source_type",
+    "source_name": "source_file_name",
+    "source_date": "quote_date",
+    "source_note": "project_name",
+    "region": null,
+    "currency": {
+      "field": "currency_normalized",
+      "fallback": "TWD"
+    },
+    "source_reliability": "unverified"
+  },
+  "item_fields": {
+    "id": "row_id",
+    "source_id": "source_file_id",
+    "row_index": "row_index",
+    "raw_category": "trade_category_normalized",
+    "raw_name": {
+      "primary": "item_name_normalized",
+      "fallback": "item_name_raw"
+    },
+    "raw_brand": {
+      "primary": "brand_normalized",
+      "fallback": "brand_raw"
+    },
+    "raw_model": {
+      "primary": "model_normalized",
+      "fallback": "model_raw"
+    },
+    "raw_spec": {
+      "primary": "spec_normalized",
+      "fallback": "spec_raw"
+    },
+    "raw_unit": {
+      "primary": "unit_normalized",
+      "fallback": "unit_raw"
+    },
+    "raw_quantity": "quantity_normalized",
+    "raw_unit_price": "unit_price_observed",
+    "raw_amount": "amount_observed",
+    "raw_currency": {
+      "field": "currency_normalized",
+      "fallback": "TWD"
+    },
+    "raw_note": {
+      "primary": "note_normalized",
+      "fallback": "note_raw"
+    },
+    "effective_date": "quote_date",
+    "region": null,
+    "vendor_name": null
+  },
+  "metadata_fields": [
+    "source_file_name",
+    "sheet_name",
+    "row_role",
+    "parse_warnings",
+    "requires_human_review",
+    "confidence"
+  ],
+  "review_conditions": {
+    "include_if_human_review": true,
+    "include_if_warnings": true
+  },
+  "conversion_conditions": {
+    "allowed_roles": [
+      "quote_line"
+    ],
+    "blocked_not_exported": true
+  }
+}

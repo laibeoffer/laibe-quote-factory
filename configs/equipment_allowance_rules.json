@@ -1,0 +1,25 @@
+{
+  "tile": {
+    "use_price_observation_for_material_unit_price": false,
+    "pricing_source": "total_budget_band",
+    "allow_external_lookup": false,
+    "notes": "本輪不連官網、不下載型錄"
+  },
+  "bathroom_fixture": {
+    "pricing_by_budget_level": true,
+    "reference_when_budget_ge_1000000": "TOTO",
+    "allow_external_lookup": false,
+    "notes": "本輪不連官網、不下載型錄"
+  },
+  "lighting": {
+    "default_brand": "舞光",
+    "types": ["崁燈", "軌道燈", "吊燈", "主燈"],
+    "observation_only": true,
+    "notes": "本輪只保留 observation 與 type tag"
+  },
+  "high_value_equipment": {
+    "scope": "equipment_allowance",
+    "exclude_from_general_averages": true,
+    "notes": "高單價設備不得混入一般工項均價"
+  }
+}
