@@ -14,7 +14,7 @@
     ],
     "reviewer_id": "junior_reviewer_simulated",
     "reviewer_note": "Illegal test case: rejected to approved_for_cloud without senior_manual_override and risk acknowledgement. Validator must block this request.",
-    "event_time": "2026-05-24T02:25:09Z",
+    "event_time": "2026-05-24T17:53:54Z",
     "errors": [
       "conditional_transition_missing_reason_code:senior_manual_override",
       "conditional_transition_missing_risk_acknowledgement",
@@ -41,7 +41,7 @@
     ],
     "reviewer_id": "senior_reviewer_simulated",
     "reviewer_note": "Keep this single-observation waterproofing range only as historical reference; do not treat it as cloud-approved candidate pricing.",
-    "event_time": "2026-05-24T02:25:09Z",
+    "event_time": "2026-05-24T17:53:54Z",
     "errors": [],
     "warnings": [],
     "schema_version": "qf5_3_review_audit_v1"
@@ -62,7 +62,7 @@
     ],
     "reviewer_id": "senior_reviewer_simulated",
     "reviewer_note": "Simulated override to allow this candidate statistic to be staged for cloud review only. This is not formal price approval.",
-    "event_time": "2026-05-24T02:25:09Z",
+    "event_time": "2026-05-24T17:53:54Z",
     "errors": [],
     "warnings": [],
     "schema_version": "qf5_3_review_audit_v1"
@@ -80,7 +80,7 @@
     "override_reason_codes": [],
     "reviewer_id": "manual_reviewer_placeholder",
     "reviewer_note": "No override request for this PriceRange; original QF5.2 review decision preserved.",
-    "event_time": "2026-05-24T02:25:09Z",
+    "event_time": "2026-05-24T17:53:54Z",
     "errors": [],
     "warnings": [],
     "schema_version": "qf5_3_review_audit_v1"
@@ -101,7 +101,7 @@
     ],
     "reviewer_id": "senior_reviewer_simulated",
     "reviewer_note": "Unit conflict is noted; keep this M2 grouping as historical reference only while PING/M2 grouping remains under review.",
-    "event_time": "2026-05-24T02:25:09Z",
+    "event_time": "2026-05-24T17:53:54Z",
     "errors": [],
     "warnings": [],
     "schema_version": "qf5_3_review_audit_v1"
@@ -119,7 +119,7 @@
     "override_reason_codes": [],
     "reviewer_id": "manual_reviewer_placeholder",
     "reviewer_note": "No override request for this PriceRange; original QF5.2 review decision preserved.",
-    "event_time": "2026-05-24T02:25:09Z",
+    "event_time": "2026-05-24T17:53:54Z",
     "errors": [],
     "warnings": [],
     "schema_version": "qf5_3_review_audit_v1"
@@ -137,7 +137,7 @@
     "override_reason_codes": [],
     "reviewer_id": "manual_reviewer_placeholder",
     "reviewer_note": "No override request for this PriceRange; original QF5.2 review decision preserved.",
-    "event_time": "2026-05-24T02:25:09Z",
+    "event_time": "2026-05-24T17:53:54Z",
     "errors": [],
     "warnings": [],
     "schema_version": "qf5_3_review_audit_v1"
@@ -155,7 +155,7 @@
     "override_reason_codes": [],
     "reviewer_id": "manual_reviewer_placeholder",
     "reviewer_note": "No override request for this PriceRange; original QF5.2 review decision preserved.",
-    "event_time": "2026-05-24T02:25:09Z",
+    "event_time": "2026-05-24T17:53:54Z",
     "errors": [],
     "warnings": [],
     "schema_version": "qf5_3_review_audit_v1"
@@ -173,7 +173,7 @@
     "override_reason_codes": [],
     "reviewer_id": "manual_reviewer_placeholder",
     "reviewer_note": "No override request for this PriceRange; original QF5.2 review decision preserved.",
-    "event_time": "2026-05-24T02:25:09Z",
+    "event_time": "2026-05-24T17:53:54Z",
     "errors": [],
     "warnings": [],
     "schema_version": "qf5_3_review_audit_v1"
@@ -191,7 +191,7 @@
     "override_reason_codes": [],
     "reviewer_id": "manual_reviewer_placeholder",
     "reviewer_note": "No override request for this PriceRange; original QF5.2 review decision preserved.",
-    "event_time": "2026-05-24T02:25:09Z",
+    "event_time": "2026-05-24T17:53:54Z",
     "errors": [],
     "warnings": [],
     "schema_version": "qf5_3_review_audit_v1"
