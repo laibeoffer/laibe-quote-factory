@@ -75,7 +75,11 @@
       "formal_price",
       "approved_price",
       "pricing_rule_id",
-      "budget_estimate_line_id"
+      "budget_estimate_line_id",
+      "material_spec_id",
+      "labor_rule_id",
+      "formal_material_spec_id",
+      "formal_labor_rule_id"
     ]
   }
 }

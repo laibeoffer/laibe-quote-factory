@@ -1,52 +1,30 @@
 # QF5.3 PriceRange Review Decision Audit & Override Contract
 
-本文件定義 `PriceRange` 人工覆核 override 的 audit trail 與安全邊界。
+## Purpose
 
-## 1. Override 用途
+QF5.3 defines how a reviewed `PriceRange` decision can be overridden while preserving a complete audit trail.
 
-Override 用於記錄人工 reviewer 在 QF5.2 `suggested_decision` 之後，基於領域判斷、單位確認、scope 確認或資料來源品質判斷，要求調整候選統計資料的 review decision。
+This contract is for candidate-governance only. It does not approve formal prices and does not create `PricingRule`, `MaterialSpec`, `LaborRule`, `BudgetEstimateLine`, renderer output, or customer-facing quote data.
 
-Override 的目的只有：
+## Relationship To QF5.2
 
-- 保留人工覆核理由。
-- 保留決策歷史。
-- 讓 Raw Candidate Warehouse 可以知道某筆候選統計資料為何被保留、封存或允許上雲等待後續 review。
+QF5.2 produces a simulated `PriceRange Review Decision` such as:
 
-## 2. 非正式定價聲明
+- `needs_more_observations`
+- `needs_unit_review`
+- `keep_as_historical_reference`
+- `approved_for_cloud`
+- `rejected`
 
-Override 不是正式價格核准。
+QF5.3 does not replace those decisions silently. It records either:
 
-即使 override 將 `final_decision` 設為 `approved_for_cloud`，也只代表「候選統計資料可上雲進入 Raw Candidate Warehouse / Pricing Review」，不代表：
+- a preserved decision, when no override exists
+- an applied override, when an allowed transition is requested
+- a rejected override, when the request is unsafe or invalid
 
-- 正式價格。
-- 正式 PricingRule。
-- 正式 MaterialSpec。
-- 正式 LaborRule。
-- BudgetEstimateLine。
-- 正式報價。
-- 可交付客戶的預算或合約金額。
+## Override Request Fields
 
-`approved_for_cloud` 仍只代表候選統計資料可上雲，不是正式定價核准。
-
-## 3. 禁止事項
-
-Override 不得：
-
-- 產生正式價格。
-- 產生正式 PricingRule。
-- 產生正式 MaterialSpec。
-- 產生正式 LaborRule。
-- 產生 BudgetEstimateLine。
-- 刪除原始 review reason。
-- 刪除原始 `suggested_decision`。
-- 覆寫或抹除 PriceObservation 原始證據。
-- 連接 Supabase。
-- 產生 migration。
-- 進入 Renderer / Excel / PDF / BudgetOutputSnapshot。
-
-## 4. 必備 Audit 欄位
-
-每筆 override request 至少必須保留：
+Each override request must include:
 
 - `override_id`
 - `price_range_id`
@@ -60,7 +38,26 @@ Override 不得：
 - `is_simulated_review`
 - `schema_version`
 
-每筆套用後的 reviewed output 至少必須保留：
+## Allowed Override Behavior
+
+Allowed transitions are configured in `configs/price_range_override_rules.json`.
+
+Examples:
+
+- `needs_more_observations -> keep_as_historical_reference`
+- `needs_unit_review -> keep_as_historical_reference`
+- `keep_as_historical_reference -> approved_for_cloud`
+
+Conditional transitions may require stronger evidence. For example:
+
+- `rejected -> approved_for_cloud` requires `senior_manual_override`
+- it also requires `override_risk_acknowledged: true`
+
+If the conditional requirement is not met, the override is rejected and the original decision is preserved.
+
+## Reviewed Output Fields
+
+The reviewed output with audit metadata must retain:
 
 - `review_decision`
 - `suggested_decision`
@@ -70,10 +67,13 @@ Override 不得：
 - `override_reason_codes`
 - `reviewer_id`
 - `reviewed_at`
+- `audit_event_id`
 - `decision_history`
 - `is_simulated_review`
 
-每筆 audit event 至少必須保留：
+## Audit Event Fields
+
+Every override or preserved decision creates an audit event with:
 
 - `audit_event_id`
 - `price_range_id`
@@ -91,38 +91,77 @@ Override 不得：
 - `warnings`
 - `schema_version`
 
-## 5. 原始理由保留
+Allowed `event_type` values:
 
-Override 不得刪除原始 review reason。
-
-套用 override 時，output 必須保留：
-
-- 原始 `review_reason_codes`
-- 原始 `suggested_decision`
-- `previous_decision`
-- `final_decision`
-- `decision_history`
-
-若 override 未被允許，必須寫入 audit log，但不得改變該筆 PriceRange 的 final decision。
-
-## 6. Decision History
-
-`decision_history` 應記錄每次決策事件，例如：
-
-- `decision_preserved`
+- `override_requested`
 - `override_applied`
 - `override_rejected`
+- `decision_preserved`
 
-每個 history entry 應包含 event id、時間、reviewer、previous decision、requested decision、final decision、reason codes、warnings/errors。
+## Decision History
 
-## 7. Safety Summary
+`decision_history` is embedded in each reviewed `PriceRange` output so the latest payload remains self-auditing.
 
-QF5.3 script summary 必須明確輸出：
+Each history entry should include:
+
+- audit event id
+- event type
+- previous decision
+- requested decision
+- final decision
+- override allowed / applied flags
+- reason codes
+- reviewer id
+- event time
+- errors
+- warnings
+
+## Safety Rules
+
+QF5.3 must never output:
+
+- `unit_price`
+- `formal_price`
+- `approved_price`
+- `pricing_rule_id`
+- `budget_estimate_line_id`
+- `material_spec_id`
+- `labor_rule_id`
+- `formal_material_spec_id`
+- `formal_labor_rule_id`
+
+`approved_for_cloud` only means the candidate statistical payload can move to cloud staging or the next review layer. It is not formal pricing approval.
+
+QF5.3 must also keep these flags false:
 
 - `formal_price_generated: false`
 - `formal_pricing_rule_generated: false`
+- `formal_material_spec_generated: false`
+- `formal_labor_rule_generated: false`
 - `budget_estimate_line_generated: false`
 - `supabase_connected: false`
 - `migration_generated: false`
 
-若未來任何流程需要把候選統計資料轉成正式定價，必須另開正式 Pricing Review / PricingRule 任務，本 contract 不授權該行為。
+## Validation Expectations
+
+Before publishing QF5.3:
+
+1. Run `python scripts/apply_price_range_review_overrides.py`.
+2. Confirm `illegal_override_blocked_count` is greater than zero.
+3. Run `python scripts/validate_sample_cloud_payload.py`.
+4. Run `python scripts/validate_price_ranges.py`.
+5. Confirm all validation summaries report zero forbidden formal pricing fields.
+6. Confirm no Supabase, API, migration, renderer, or formal quote path is connected.
+
+## Downstream Boundary
+
+Correct downstream path:
+
+`Quote Factory -> Raw Candidate Warehouse -> Pricing / Method Review -> Budget Engine`
+
+Forbidden direct paths:
+
+- `PriceRange -> Renderer`
+- `PriceRange -> BudgetOutputSnapshot`
+- `display_unit_price -> BudgetEstimateLine.unit_price`
+- `approved_for_cloud -> formal price approval`

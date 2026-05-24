@@ -38,6 +38,10 @@ FORBIDDEN_FIELDS = {
     "approved_price",
     "pricing_rule_id",
     "budget_estimate_line_id",
+    "material_spec_id",
+    "labor_rule_id",
+    "formal_material_spec_id",
+    "formal_labor_rule_id",
 }
 
 REQUIRED_TOP_FIELDS = [
@@ -570,6 +574,8 @@ def main():
         "upload_stage_invalid_count": 0,
         "formal_price_generated": False,
         "formal_pricing_rule_generated": False,
+        "formal_material_spec_generated": False,
+        "formal_labor_rule_generated": False,
         "budget_estimate_line_generated": False,
         "supabase_connected": False,
         "migration_generated": False,
