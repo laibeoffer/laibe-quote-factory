@@ -15,12 +15,14 @@
 | QF5 | Generate `PriceRange` samples | Completed | Statistical candidates only. |
 | QF5.1 | PriceRange sanity guard | Completed | Group key, display null, cross-unit checks. |
 | QF5.2 | PriceRange review decision contract | Published baseline | Review decisions remain candidate-governance only. |
-| QF5.3 | PriceRange review audit / override contract | In progress for Issue #1 | Verify and publish audit override behavior. |
-| QF5.4 | PriceRange review audit QA / cloud staging dry-run | Planned | Not active until QF5.3 is published. |
+| QF5.3 | PriceRange review audit / override contract | Completed | Published through PR #2 / main `d075c505d0e950ca288e8d374bdf2efc6b447105`; audit override behavior remains candidate-governance only. |
+| QF5.4 | Cloud-ready export package finalization | Completed | Adds sample dry-run export package, export manifest, and package validator for Raw Candidate Warehouse intake. |
 
 ## Phase Gate
 
-QF5.4 must not become active until QF5.3 is visible in `laibeoffer/laibe-quote-factory` and validation has passed.
+QF5.4 became active only through the scoped export package finalization task after QF5.3 was visible in `laibeoffer/laibe-quote-factory`.
+
+QF5.4 remains a local dry-run package for Raw Candidate Warehouse intake. It is not a real cloud upload, Supabase integration, API, migration, renderer path, or formal pricing path.
 
 ## Permanent Boundary
 

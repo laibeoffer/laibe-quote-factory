@@ -1,0 +1,120 @@
+{
+  "package_id": "qf5_4_cloud_ready_export_package_sample_v1",
+  "schema_version": "qf5_4_export_package_v1",
+  "generated_at": "2026-05-31T00:00:00Z",
+  "source_repo": "laibeoffer/laibe-quote-factory",
+  "source_branch": "qf/qf5-4-export-package-finalization",
+  "source_commit": "eaa39959063f985f241e436434450f2f6b02105b",
+  "source_main_commit": "d075c505d0e950ca288e8d374bdf2efc6b447105",
+  "package_scope": "sample_candidate_dry_run",
+  "included_files": [
+    "exports_to_raw_warehouse/sample_price_observations.json",
+    "exports_to_raw_warehouse/sample_price_ranges.json",
+    "exports_to_raw_warehouse/sample_price_ranges_reviewed_with_audit.json",
+    "review_queue/sample_price_range_review_decisions.json",
+    "review_queue/sample_price_range_review_overrides.json",
+    "review_queue/sample_price_range_review_audit_log.json",
+    "review_queue/sample_price_range_review_queue.json",
+    "configs/cloud_table_mapping.json",
+    "configs/price_range_review_decision_rules.json",
+    "configs/price_range_override_rules.json"
+  ],
+  "price_observation_file": "exports_to_raw_warehouse/sample_price_observations.json",
+  "price_range_file": "exports_to_raw_warehouse/sample_price_ranges.json",
+  "reviewed_price_range_file": "exports_to_raw_warehouse/sample_price_ranges_reviewed_with_audit.json",
+  "audit_log_file": "review_queue/sample_price_range_review_audit_log.json",
+  "review_decision_file": "review_queue/sample_price_range_review_decisions.json",
+  "review_override_file": "review_queue/sample_price_range_review_overrides.json",
+  "export_manifest_file": "exports_to_raw_warehouse/export_manifest.json",
+  "validation_summary": {
+    "validate_qf3_configs": {
+      "command": "python scripts\\validate_qf3_configs.py",
+      "status": "passed",
+      "error_count": 0,
+      "warning_count": 0
+    },
+    "validate_sample_cloud_payload": {
+      "command": "python scripts\\validate_sample_cloud_payload.py",
+      "status": "passed",
+      "error_count": 0,
+      "warning_count": 0,
+      "forbidden_field_hit_count": 0
+    },
+    "validate_price_ranges_base": {
+      "command": "python scripts\\validate_price_ranges.py exports_to_raw_warehouse\\sample_price_ranges.json",
+      "status": "passed",
+      "error_count": 0,
+      "forbidden_field_hit_count": 0
+    },
+    "validate_price_ranges_reviewed_with_audit": {
+      "command": "python scripts\\validate_price_ranges.py exports_to_raw_warehouse\\sample_price_ranges_reviewed_with_audit.json",
+      "status": "passed",
+      "error_count": 0,
+      "forbidden_field_hit_count": 0
+    },
+    "validate_raw_quote_rows": {
+      "command": "python scripts\\validate_raw_quote_rows.py",
+      "status": "passed",
+      "invalid_rows": []
+    },
+    "validate_cloud_ready_export_package": {
+      "command": "python scripts\\validate_cloud_ready_export_package.py",
+      "status": "defined_for_qf5_4",
+      "expected_error_count": 0
+    }
+  },
+  "forbidden_field_summary": {
+    "forbidden_exact_key_hit_count": 0,
+    "formal_price_generated": false,
+    "formal_pricing_rule_generated": false,
+    "formal_material_spec_generated": false,
+    "formal_labor_rule_generated": false,
+    "budget_estimate_line_generated": false,
+    "supabase_connected": false,
+    "api_connected": false,
+    "migration_generated": false,
+    "renderer_output_generated": false,
+    "payment_connected": false,
+    "escrow_connected": false,
+    "listing_fee_connected": false
+  },
+  "handoff_target": "raw_candidate_warehouse",
+  "downstream_allowed": [
+    "raw_candidate_warehouse",
+    "pricing_method_review",
+    "review_queue"
+  ],
+  "downstream_forbidden": [
+    "Budget Engine",
+    "Renderer",
+    "BudgetOutputSnapshot",
+    "customer_view",
+    "PricingRule direct publish",
+    "BudgetEstimateLine.unit_price"
+  ],
+  "formal_price_generated": false,
+  "formal_pricing_rule_generated": false,
+  "formal_material_spec_generated": false,
+  "formal_labor_rule_generated": false,
+  "budget_estimate_line_generated": false,
+  "requirement_context_window": {
+    "project_id": null,
+    "owner_intent_id": null,
+    "project_requirement_brief_id": null,
+    "requirement_context_status": "placeholder",
+    "requirement_context_source": "owner_guide_placeholder",
+    "metadata_only": true,
+    "affects_observation_values": false,
+    "affects_range_values": false
+  },
+  "plan_context_window": {
+    "plan_id": null,
+    "svg_artifact_id": null,
+    "plan_source_type": "placeholder",
+    "plan_quantity_facts_id": null,
+    "plan_context_status": "placeholder",
+    "metadata_only": true,
+    "affects_observation_values": false,
+    "affects_range_values": false
+  }
+}
