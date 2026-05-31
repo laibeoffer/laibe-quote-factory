@@ -22,7 +22,7 @@
 
 QF5.4 became active only through the scoped export package finalization task after QF5.3 was visible in `laibeoffer/laibe-quote-factory`.
 
-QF5.4 remains a local dry-run package for Raw Candidate Warehouse intake. It is not a real cloud upload, Supabase integration, API, migration, renderer path, or formal pricing path.
+QF5.4 remains a GitHub-tracked dry-run package for Raw Candidate Warehouse intake. It is not a real cloud upload, Supabase integration, API, migration, renderer path, or formal pricing path.
 
 ## Permanent Boundary
 
