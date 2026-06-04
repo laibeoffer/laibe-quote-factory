@@ -1,0 +1,168 @@
+{
+  "manifest_id": "qf5_4_export_manifest_sample_v1",
+  "package_id": "qf5_4_cloud_ready_export_package_sample_v1",
+  "schema_version": "qf5_4_export_manifest_v1",
+  "generated_at": "2026-05-31T00:00:00Z",
+  "files": [
+    {
+      "path": "exports_to_raw_warehouse/sample_price_observations.json",
+      "role": "price_observation_evidence",
+      "required": true,
+      "object_count": 8,
+      "schema_versions": [
+        "qf3_v1"
+      ]
+    },
+    {
+      "path": "exports_to_raw_warehouse/sample_price_ranges.json",
+      "role": "price_range_candidate",
+      "required": true,
+      "object_count": 9,
+      "schema_versions": [
+        "qf3_v1"
+      ]
+    },
+    {
+      "path": "exports_to_raw_warehouse/sample_price_ranges_reviewed_with_audit.json",
+      "role": "reviewed_price_range_candidate_with_audit",
+      "required": true,
+      "object_count": 9,
+      "schema_versions": [
+        "qf5_3_reviewed_with_audit_v1"
+      ]
+    },
+    {
+      "path": "review_queue/sample_price_range_review_decisions.json",
+      "role": "price_range_review_decision",
+      "required": true,
+      "object_count": 9,
+      "schema_versions": [
+        "qf5_2_v1"
+      ]
+    },
+    {
+      "path": "review_queue/sample_price_range_review_overrides.json",
+      "role": "price_range_review_override_request",
+      "required": true,
+      "object_count": 4,
+      "schema_versions": [
+        "qf5_3_override_request_v1"
+      ]
+    },
+    {
+      "path": "review_queue/sample_price_range_review_audit_log.json",
+      "role": "price_range_review_audit_log",
+      "required": true,
+      "object_count": 10,
+      "schema_versions": [
+        "qf5_3_review_audit_v1"
+      ]
+    },
+    {
+      "path": "review_queue/sample_price_range_review_queue.json",
+      "role": "price_range_review_queue",
+      "required": true,
+      "object_count": 9,
+      "schema_versions": [
+        "qf3_v1"
+      ]
+    },
+    {
+      "path": "configs/cloud_table_mapping.json",
+      "role": "future_cloud_field_mapping_reference",
+      "required": true,
+      "object_count": 1,
+      "schema_versions": []
+    },
+    {
+      "path": "configs/price_range_review_decision_rules.json",
+      "role": "review_decision_rules",
+      "required": true,
+      "object_count": 1,
+      "schema_versions": [
+        "qf5_2_v1"
+      ]
+    },
+    {
+      "path": "configs/price_range_override_rules.json",
+      "role": "review_override_rules",
+      "required": true,
+      "object_count": 1,
+      "schema_versions": [
+        "qf5_3_override_rules_v1"
+      ]
+    }
+  ],
+  "object_counts": {
+    "exports_to_raw_warehouse/sample_price_observations.json": 8,
+    "exports_to_raw_warehouse/sample_price_ranges.json": 9,
+    "exports_to_raw_warehouse/sample_price_ranges_reviewed_with_audit.json": 9,
+    "review_queue/sample_price_range_review_decisions.json": 9,
+    "review_queue/sample_price_range_review_overrides.json": 4,
+    "review_queue/sample_price_range_review_audit_log.json": 10,
+    "review_queue/sample_price_range_review_queue.json": 9,
+    "configs/cloud_table_mapping.json": 1,
+    "configs/price_range_review_decision_rules.json": 1,
+    "configs/price_range_override_rules.json": 1
+  },
+  "schema_versions": {
+    "exports_to_raw_warehouse/sample_price_observations.json": [
+      "qf3_v1"
+    ],
+    "exports_to_raw_warehouse/sample_price_ranges.json": [
+      "qf3_v1"
+    ],
+    "exports_to_raw_warehouse/sample_price_ranges_reviewed_with_audit.json": [
+      "qf5_3_reviewed_with_audit_v1"
+    ],
+    "review_queue/sample_price_range_review_decisions.json": [
+      "qf5_2_v1"
+    ],
+    "review_queue/sample_price_range_review_overrides.json": [
+      "qf5_3_override_request_v1"
+    ],
+    "review_queue/sample_price_range_review_audit_log.json": [
+      "qf5_3_review_audit_v1"
+    ],
+    "review_queue/sample_price_range_review_queue.json": [
+      "qf3_v1"
+    ],
+    "configs/cloud_table_mapping.json": [],
+    "configs/price_range_review_decision_rules.json": [
+      "qf5_2_v1"
+    ],
+    "configs/price_range_override_rules.json": [
+      "qf5_3_override_rules_v1"
+    ]
+  },
+  "source_trace": {
+    "source_repo": "laibeoffer/laibe-quote-factory",
+    "source_branch": "qf/qf5-4-export-package-finalization",
+    "base_branch": "main",
+    "base_main_commit": "d075c505d0e950ca288e8d374bdf2efc6b447105",
+    "qf5_3_source_commit": "eaa39959063f985f241e436434450f2f6b02105b",
+    "handoff_target": "raw_candidate_warehouse",
+    "package_scope": "sample_candidate_dry_run"
+  },
+  "validation_commands": [
+    "python scripts\\validate_qf3_configs.py",
+    "python scripts\\validate_sample_cloud_payload.py",
+    "python scripts\\validate_price_ranges.py exports_to_raw_warehouse\\sample_price_ranges.json",
+    "python scripts\\validate_price_ranges.py exports_to_raw_warehouse\\sample_price_ranges_reviewed_with_audit.json",
+    "python scripts\\validate_raw_quote_rows.py",
+    "python scripts\\validate_cloud_ready_export_package.py"
+  ],
+  "downstream_allowed": [
+    "raw_candidate_warehouse",
+    "pricing_method_review",
+    "review_queue"
+  ],
+  "downstream_forbidden": [
+    "Budget Engine",
+    "Renderer",
+    "BudgetOutputSnapshot",
+    "customer_view",
+    "PricingRule direct publish",
+    "BudgetEstimateLine.unit_price"
+  ]
+}
